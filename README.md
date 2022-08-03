@@ -1,7 +1,7 @@
 
 
- <td><p>
-<a href="http://caraga.dilg.gov.ph/main/" target="_blank" rel="noopener noreferrer"><img height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Department_of_the_Interior_and_Local_Government_%28DILG%29_Seal_-_Logo.svg/240px-Department_of_the_Interior_and_Local_Government_%28DILG%29_Seal_-_Logo.svg.png" alt="LGU-Caraga-logo"><a></p></td>
+ <td><p align="right">
+<a href="http://caraga.dilg.gov.ph/main/" target="_blank" rel="noopener noreferrer"><img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Department_of_the_Interior_and_Local_Government_%28DILG%29_Seal_-_Logo.svg/240px-Department_of_the_Interior_and_Local_Government_%28DILG%29_Seal_-_Logo.svg.png" alt="LGU-Caraga-logo"><a></p></td>
  
  <td><h1>Local Government Unit-Caraga</h1></td>
 Built with:
