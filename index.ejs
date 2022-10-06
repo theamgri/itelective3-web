@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Weather Application</title>
+    <div class="container1">
+        <header>
+            
+            <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-cyan-900">
+                <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                    <a href="https://flowbite.com" class="flex items-center">
+                        <svg width="48px" height="48px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                              <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#f80"/>
+                                <stop offset="1" stop-color="#db2903"/>
+                              </linearGradient>
+                              <clipPath id="clip-Weather">
+                                <rect width="48" height="48"/>
+                              </clipPath>
+                            </defs>
+                            <g id="Weather" clip-path="url(#clip-Weather)">
+                              <rect width="48" height="48" fill="rgba(255,255,255,0)"/>
+                              <g id="Weather-2" data-name="Weather" transform="translate(5 8)">
+                                <g id="Icon" transform="translate(14)" stroke="rgba(255,255,255,0.3)" stroke-miterlimit="10" stroke-width="0.5" fill="url(#linear-gradient)">
+                                  <rect width="24" height="24" rx="12" stroke="none"/>
+                                  <rect x="0.25" y="0.25" width="23.5" height="23.5" rx="11.75" fill="none"/>
+                                </g>
+                                <g id="Icon-2" data-name="Icon" transform="translate(0 10)" fill="rgba(255,169,125,0.7)" stroke-miterlimit="10">
+                                  <path d="M7,21A7,7,0,0,1,6,7.071V7A7,7,0,0,1,19.128,3.614a7.007,7.007,0,0,1,9.393,3.837A7,7,0,1,1,31,21Z" stroke="none"/>
+                                  <path d="M 31 20.5 C 34.58411026000977 20.5 37.5 17.58411026000977 37.5 14 C 37.5 10.41588973999023 34.58411026000977 7.5 31 7.5 C 30.20731925964355 7.5 29.43293952941895 7.640900135040283 28.6983699798584 7.918779850006104 L 28.23591995239258 8.093720436096191 L 28.05581092834473 7.63325023651123 C 27.58473014831543 6.42887020111084 26.77205085754395 5.40038013458252 25.70564079284668 4.658999919891357 C 24.61502075195313 3.900769948959351 23.33362007141113 3.5 22 3.5 C 21.07080078125 3.5 20.17362976074219 3.691800117492676 19.33340072631836 4.070079803466797 L 18.9136791229248 4.259049892425537 L 18.69071006774902 3.856359958648682 C 17.54442977905273 1.786080002784729 15.3638801574707 0.5 13 0.5 C 9.416983604431152 0.5 6.50178050994873 3.414060592651367 6.500001430511475 6.996668815612793 L 6.500939846038818 7.06374979019165 L 6.507090091705322 7.503509998321533 L 6.071720123291016 7.565720081329346 C 4.538670063018799 7.784780025482178 3.129790067672729 8.551179885864258 2.104619979858398 9.723719596862793 C 1.069869995117188 10.90723991394043 0.5 12.42591953277588 0.5 14 C 0.5 17.58411026000977 3.415889978408813 20.5 7 20.5 L 31 20.5 M 31 21 L 7 21 C 3.134010076522827 21 0 17.86598968505859 0 14 C 0 10.47317981719971 2.608220100402832 7.555550098419189 6.00098991394043 7.07075023651123 L 6 7 C 6 3.134010076522827 9.134010314941406 0 13 0 C 15.63784027099609 0 17.93489074707031 1.459059953689575 19.12813949584961 3.614160060882568 C 20.00445938110352 3.219630002975464 20.9765796661377 3 22 3 C 24.9666805267334 3 27.50230979919434 4.84552001953125 28.52145957946777 7.451119899749756 C 29.29174041748047 7.159729957580566 30.12722015380859 7 31 7 C 34.86598968505859 7 38 10.13401031494141 38 14 C 38 17.86598968505859 34.86598968505859 21 31 21 Z" stroke="none" fill="rgba(255,255,255,0.3)"/></g></g></g></svg>
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Weather Today</span></a>
+                    <div class="flex items-center lg:order-2">
+                        <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                    <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                           
+                           
+                            <li>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                            </li>
+                            <li>
+                                <a href="/other" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Other</a></li></ul></div></div></nav>
+        </header>
+        </div>
+</head>
+<body>
+      
+    </div>
+    <div class="flex flex-col items-center justify-center w-screen min-h-screen text-cyan-900 p-10 bg-gradient-to-br from-cyan-600 via-cyan-100 to-cyan-100 ">
+
+        <!-- Weather for today-->
+        <div class="w-full max-w-screen-sm bg-white p-10 rounded-xl ring-8 ring-white ring-opacity-40">
+            <div class="flex justify-between">
+                <div class="flex flex-col">
+                    
+                    <span class="text-6xl font-medium"><%- weatherdata[0].location.name %></span>
+                    <span class="font-semibold mt-1 text-gray-500"><%- weatherdata[0].location.lat %>° N</span>
+                    <span class="font-semibold mt-1 text-gray-500"><%- weatherdata[0].location.long %>° E</span>
+                </div>
+                <img src="https://www.pngkey.com/png/full/118-1185109_3d-waving-graphics-flag-of-philippines-philippine-flag.png" class="h-28 w-30">
+            </div>
+            <div class="flex justify-between mt-12">
+                <div class="flex flex-col items-center">
+                    <span class="font-semibold text-lg"><%- weatherdata[0].current.temperature %>°<%- weatherdata[0].location.degreetype %></span>
+                    <span class="font-semibold mt-1 text-sm">
+                        
+                        <% if(weatherdata[0].current.skytext == 'Light Rain') { %>
+                            <svg class="h-20 w-20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16.854 16.854" style="enable-background:new 0 0 16.854 16.854;" xml:space="preserve"><g><g>
+		                    <path style="fill:#006064;" d="M11.663,1.462c-1.37,0-2.681,0.545-3.652,1.506C7.696,2.885,7.372,2.842,7.048,2.842 c-1.148,0-2.225,0.515-2.946,1.393c-0.099-0.009-0.196-0.013-0.29-0.013C1.709,4.222,0,5.933,0,8.035 c0,1.968,1.475,3.599,3.431,3.792l6.772,0.001c0.008,0.001,0.014,0.004,0.021,0.004h1.017h0.002h0.203l0,0h0.523h0.019 c2.729-0.171,4.866-2.445,4.866-5.178C16.854,3.792,14.526,1.462,11.663,1.462z M11.933,10.678h-0.479 c-0.004,0-0.006-0.001-0.008-0.001h-0.203h-0.002h-1.017c-0.002,0-0.002,0-0.002,0H3.518c-1.35-0.148-2.363-1.278-2.363-2.642 c0-1.466,1.191-2.658,2.657-2.658c0.14,0,0.288,0.014,0.453,0.043l0.368,0.063l0.209-0.309C5.513,4.175,6.816,3.733,7.98,4.169 L8.355,4.31l0.264-0.302c0.77-0.884,1.878-1.391,3.044-1.391c2.226,0,4.037,1.812,4.037,4.037 C15.7,8.772,14.047,10.536,11.933,10.678z"/>
+		                    <path style="fill:#006064;" d="M8.448,14.5c0,0.493,0.356,0.892,0.797,0.892s0.797-0.398,0.797-0.892s-0.797-1.288-0.797-1.288 S8.448,14.007,8.448,14.5z"/>
+		                    <path style="fill:#006064;" d="M10.529,13.401c0,0.355,0.22,0.644,0.49,0.644s0.49-0.288,0.49-0.644c0-0.356-0.49-0.93-0.49-0.93 S10.529,13.045,10.529,13.401z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <% } else if(weatherdata[0].current.skytext == 'Rain Showers' || weatherdata[0].current.skytext == 'Rain') { %>  
+                            <svg class="h-20 w-20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+                                <path d="M9.45455 30.9942C6.14242 28.461 4 24.4278 4 19.8851C4 12.2166 10.1052 6 17.6364 6C23.9334 6 29.2336 10.3462 30.8015 16.2533C32.0353 15.6159 33.431 15.2567 34.9091 15.2567C39.9299 15.2567 44 19.4011 44 24.5135C44 28.3094 41.7562 31.5716 38.5455 33" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 27V31" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 38V42" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                            <% } else if(weatherdata[0].current.skytext == 'T-Storms') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                  <g>
+                                    <path style="fill:#006064" d="m328.7,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z" />
+                                    <path style="fill:#006064" d="m455,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.2-21.7-3.7-28.6z" />
+                                    <path  style="fill:#006064" d="m376.4,432.9c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z"/>
+                                    <path  style="fill:#006064" d="m437.6,121.6c-7.8-62.9-65-110.6-135.4-110.6-40.9,0-78.7,16.5-104.2,44.5-18.3-17-43.6-27.1-70.3-27.1-54.5,0-98.9,40.7-98.9,90.7 0,10.3 2,20.6 5.7,30.3-15.2,20-23.5,43.8-23.5,68.2 0,62.6 52.9,114.1 119.8,118.8l-13.1,26c-2.7,5.4-2.9,11.7-0.5,17.3 2.4,5.6 7.1,9.8 12.9,11.5l37.4,11.2-48,65.5c-6.7,9.1-4.7,21.9 4.4,28.5 3.6,2.7 17.2,9.4 28.5-4.4l65.1-88.8c3.9-5.4 5-12.3 2.9-18.6-2.1-6.3-7.1-11.2-13.5-13.1l-41.8-12.5 11.2-22.3h199.1c69.2,0 125.6-51.7 125.6-115.2 0-41.5-24.5-79.6-63.4-99.9zm-62.2,177.7h-234.5c-49.1,0-89.1-36.7-89.1-81.7 0-19.5 7.7-38.4 21.6-53.2 5.4-5.8 6.5-14 2.7-20.8-4.3-7.7-6.5-15.9-6.5-24.4 0-29.4 26.1-53.3 58.1-53.3 22.3,0 42.9,12 52.5,30.6 3.3,6.5 10.4,10.6 18.2,10.7 7.6,0.1 15-3.9 18.5-10.3 16.4-29.9 49.1-48.4 85.4-48.4 52.2,0 94.2,37.6 95.5,85.5 0.2,7.2 4.9,13.7 12.1,16.6 30.6,12.5 50.4,40.4 50.4,71-0.1,42.8-38.1,77.7-84.9,77.7z"/>
+                                  </g>
+                                </g>
+                              </svg>
+                              <% } else if(weatherdata[0].current.skytext == 'Mostly Cloudy' || weatherdata[0].current.skytext == 'Cloudy' || weatherdata[0].current.skytext == 'Clear') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                      <path style="fill:#006064" d="m402.5,259.7c-6.4-32.4-23.5-62-48.6-83.9-5.5-4.8-11.2-9.1-17.2-13 0-1.5-0.1-2.9-0.4-4.4-2.5-12.2-6.5-23.9-11.7-34.9l8.7-5.8c9.4-6.2 11.9-18.9 5.7-28.3-6.2-9.4-18.9-12-28.3-5.7l-8.4,5.6c-17.2-19.9-39.1-34.8-63.8-43.5l2.1-10.3c2.2-11-4.9-21.8-15.9-24.1-11.1-2.3-21.8,4.9-24.1,15.9l-2.1,10.2c-26.1-1.8-52,3.2-75.5,14.7l-5.6-8.6c-6.2-9.4-18.8-12.1-28.2-5.9-9.6,6.2-12.2,18.9-6,28.3l5.8,8.8c-20.2,17.7-34.8,40.1-43.2,64.5l-10-2.1c-11-2.3-21.8,4.8-24.1,15.9-2.3,11 4.8,21.8 15.8,24.1l10.1,2.1c-1.5,21.2 1.4,42.7 9,63.3l-13.3,8.8c-9.4,6.3-11.9,18.9-5.7,28.3 3.9,5.9 10.4,9.1 17,9.1 2.9,0 5.9-0.6 8.7-2-4.4,3.8-8.6,8-12.5,12.4-19.4,22.3-30.1,50.9-29.9,80.5 0.2,66.9 55.4,121.3 122.8,121.3h244.2c32.4,0 63.1-12.7 86.4-35.6 23.5-23.1 36.5-53.7 36.5-86.1 5.68434e-14-58.5-41.7-108.6-98.3-119.6zm-274.9-163.2c24.5-16.3 53.9-22.1 82.7-16.2 29,5.9 53.9,22.9 70.1,47.8 3,4.6 5.6,9.4 7.9,14.3-10.8-2.5-22-3.7-33.2-3.7-36.4,0-71.5,13.2-98.8,37.1-25.1,22-42.2,51.6-48.6,84.2-1.4,0.3-2.9,0.6-4.3,1-2.6-3.1-5-6.4-7.2-9.8-33.5-51.4-19.5-120.8 31.4-154.7zm308.1,339.6c-15.7,15.4-36.2,23.9-57.8,23.9h-244.2c-45,0-81.7-36-81.9-80.4-0.2-40.2 29.6-74.7 69.2-80.3 13.4-1.9 24.1-12.5 26-25.9 7.6-53.4 54.1-93.7 108.1-93.7 53.9,0 100.4,40.2 108.1,93.5 2,13.5 12.8,24.2 26.4,25.9 40,5.2 70.2,39.6 70.2,80 0.1,21.4-8.5,41.6-24.1,57z"/>
+                                    </g>
+                                  </svg>
+                              <% } else if(weatherdata[0].current.skytext == 'Sunny' || weatherdata[0].current.skytext == 'Partly Sunny') { %>
+                                <svg class="h-20 w-20" width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>ionicons-v5-q</title><path style="fill:#006064" d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z"/><path style="fill:#006064" d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z"/><path style="fill:#006064" d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z"/><path style="fill:#006064" d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z"/><path style="fill:#006064" d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z"/><path style="fill:#006064" d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z"/><path style="fill:#006064" d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z"/></svg>
+                             <% } %>
+
+                             <%- weatherdata[0].current.skytext %>
+                             </span>
+                      
+                    
+                             <span class="font-semibold mt-1 text-sm">Today</span>
+                    <span class="font-semibold mt-1 text-sm"><%- weatherdata[0].current.date %> </span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-semibold text-lg"><%- weatherdata[0].forecast[0].high %>°<%- weatherdata[0].location.degreetype %></span>
+                    <span class="font-semibold mt-1 text-sm">
+                        
+                        <% if(weatherdata[0].forecast[0].skytextday == 'Light Rain') { %>
+                            <svg class="h-20 w-20 " version="1.1" height="24" width="24" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.854 16.854" style="enable-background:new 0 0 16.854 16.854;" xml:space="preserve"><g><g>
+		                    <path style="fill:#006064;" d="M11.663,1.462c-1.37,0-2.681,0.545-3.652,1.506C7.696,2.885,7.372,2.842,7.048,2.842 c-1.148,0-2.225,0.515-2.946,1.393c-0.099-0.009-0.196-0.013-0.29-0.013C1.709,4.222,0,5.933,0,8.035 c0,1.968,1.475,3.599,3.431,3.792l6.772,0.001c0.008,0.001,0.014,0.004,0.021,0.004h1.017h0.002h0.203l0,0h0.523h0.019 c2.729-0.171,4.866-2.445,4.866-5.178C16.854,3.792,14.526,1.462,11.663,1.462z M11.933,10.678h-0.479 c-0.004,0-0.006-0.001-0.008-0.001h-0.203h-0.002h-1.017c-0.002,0-0.002,0-0.002,0H3.518c-1.35-0.148-2.363-1.278-2.363-2.642 c0-1.466,1.191-2.658,2.657-2.658c0.14,0,0.288,0.014,0.453,0.043l0.368,0.063l0.209-0.309C5.513,4.175,6.816,3.733,7.98,4.169 L8.355,4.31l0.264-0.302c0.77-0.884,1.878-1.391,3.044-1.391c2.226,0,4.037,1.812,4.037,4.037 C15.7,8.772,14.047,10.536,11.933,10.678z"/>
+		                    <path style="fill:#006064;" d="M8.448,14.5c0,0.493,0.356,0.892,0.797,0.892s0.797-0.398,0.797-0.892s-0.797-1.288-0.797-1.288 S8.448,14.007,8.448,14.5z"/>
+		                    <path style="fill:#006064;" d="M10.529,13.401c0,0.355,0.22,0.644,0.49,0.644s0.49-0.288,0.49-0.644c0-0.356-0.49-0.93-0.49-0.93 S10.529,13.045,10.529,13.401z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <% } else if(weatherdata[0].forecast[0].skytextday == 'Rain Showers' || weatherdata[0].forecast[0].skytextday == 'Rain') { %>  
+                            <svg  class="h-20 w-20" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+                                <path d="M9.45455 30.9942C6.14242 28.461 4 24.4278 4 19.8851C4 12.2166 10.1052 6 17.6364 6C23.9334 6 29.2336 10.3462 30.8015 16.2533C32.0353 15.6159 33.431 15.2567 34.9091 15.2567C39.9299 15.2567 44 19.4011 44 24.5135C44 28.3094 41.7562 31.5716 38.5455 33" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 27V31" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 38V42" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                            <% } else if(weatherdata[0].forecast[0].skytextday == 'T-Storms') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                  <g>
+                                    <path style="fill:#006064" d="m328.7,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z" />
+                                    <path style="fill:#006064" d="m455,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.2-21.7-3.7-28.6z" />
+                                    <path  style="fill:#006064" d="m376.4,432.9c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z"/>
+                                    <path  style="fill:#006064" d="m437.6,121.6c-7.8-62.9-65-110.6-135.4-110.6-40.9,0-78.7,16.5-104.2,44.5-18.3-17-43.6-27.1-70.3-27.1-54.5,0-98.9,40.7-98.9,90.7 0,10.3 2,20.6 5.7,30.3-15.2,20-23.5,43.8-23.5,68.2 0,62.6 52.9,114.1 119.8,118.8l-13.1,26c-2.7,5.4-2.9,11.7-0.5,17.3 2.4,5.6 7.1,9.8 12.9,11.5l37.4,11.2-48,65.5c-6.7,9.1-4.7,21.9 4.4,28.5 3.6,2.7 17.2,9.4 28.5-4.4l65.1-88.8c3.9-5.4 5-12.3 2.9-18.6-2.1-6.3-7.1-11.2-13.5-13.1l-41.8-12.5 11.2-22.3h199.1c69.2,0 125.6-51.7 125.6-115.2 0-41.5-24.5-79.6-63.4-99.9zm-62.2,177.7h-234.5c-49.1,0-89.1-36.7-89.1-81.7 0-19.5 7.7-38.4 21.6-53.2 5.4-5.8 6.5-14 2.7-20.8-4.3-7.7-6.5-15.9-6.5-24.4 0-29.4 26.1-53.3 58.1-53.3 22.3,0 42.9,12 52.5,30.6 3.3,6.5 10.4,10.6 18.2,10.7 7.6,0.1 15-3.9 18.5-10.3 16.4-29.9 49.1-48.4 85.4-48.4 52.2,0 94.2,37.6 95.5,85.5 0.2,7.2 4.9,13.7 12.1,16.6 30.6,12.5 50.4,40.4 50.4,71-0.1,42.8-38.1,77.7-84.9,77.7z"/>
+                                  </g>
+                                </g>
+                              </svg>
+                              <% } else if(weatherdata[0].forecast[0].skytextday == 'Mostly Cloudy' || weatherdata[0].forecast[0].skytextday == 'Cloudy' || weatherdata[0].forecast[0].skytextday == 'Clear') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                      <path style="fill:#006064" d="m402.5,259.7c-6.4-32.4-23.5-62-48.6-83.9-5.5-4.8-11.2-9.1-17.2-13 0-1.5-0.1-2.9-0.4-4.4-2.5-12.2-6.5-23.9-11.7-34.9l8.7-5.8c9.4-6.2 11.9-18.9 5.7-28.3-6.2-9.4-18.9-12-28.3-5.7l-8.4,5.6c-17.2-19.9-39.1-34.8-63.8-43.5l2.1-10.3c2.2-11-4.9-21.8-15.9-24.1-11.1-2.3-21.8,4.9-24.1,15.9l-2.1,10.2c-26.1-1.8-52,3.2-75.5,14.7l-5.6-8.6c-6.2-9.4-18.8-12.1-28.2-5.9-9.6,6.2-12.2,18.9-6,28.3l5.8,8.8c-20.2,17.7-34.8,40.1-43.2,64.5l-10-2.1c-11-2.3-21.8,4.8-24.1,15.9-2.3,11 4.8,21.8 15.8,24.1l10.1,2.1c-1.5,21.2 1.4,42.7 9,63.3l-13.3,8.8c-9.4,6.3-11.9,18.9-5.7,28.3 3.9,5.9 10.4,9.1 17,9.1 2.9,0 5.9-0.6 8.7-2-4.4,3.8-8.6,8-12.5,12.4-19.4,22.3-30.1,50.9-29.9,80.5 0.2,66.9 55.4,121.3 122.8,121.3h244.2c32.4,0 63.1-12.7 86.4-35.6 23.5-23.1 36.5-53.7 36.5-86.1 5.68434e-14-58.5-41.7-108.6-98.3-119.6zm-274.9-163.2c24.5-16.3 53.9-22.1 82.7-16.2 29,5.9 53.9,22.9 70.1,47.8 3,4.6 5.6,9.4 7.9,14.3-10.8-2.5-22-3.7-33.2-3.7-36.4,0-71.5,13.2-98.8,37.1-25.1,22-42.2,51.6-48.6,84.2-1.4,0.3-2.9,0.6-4.3,1-2.6-3.1-5-6.4-7.2-9.8-33.5-51.4-19.5-120.8 31.4-154.7zm308.1,339.6c-15.7,15.4-36.2,23.9-57.8,23.9h-244.2c-45,0-81.7-36-81.9-80.4-0.2-40.2 29.6-74.7 69.2-80.3 13.4-1.9 24.1-12.5 26-25.9 7.6-53.4 54.1-93.7 108.1-93.7 53.9,0 100.4,40.2 108.1,93.5 2,13.5 12.8,24.2 26.4,25.9 40,5.2 70.2,39.6 70.2,80 0.1,21.4-8.5,41.6-24.1,57z"/>
+                                    </g>
+                                  </svg>
+                              <% } else if(weatherdata[0].forecast[0].skytextday == 'Sunny' || weatherdata[0].forecast[0].skytextday == 'Partly Sunny' ) { %>
+                                <svg class="h-20 w-20" width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>ionicons-v5-q</title><path style="fill:#006064" d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z"/><path style="fill:#006064" d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z"/><path style="fill:#006064" d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z"/><path style="fill:#006064" d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z"/><path style="fill:#006064" d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z"/><path style="fill:#006064" d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z"/><path style="fill:#006064" d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z"/></svg>
+                             <% } %>
+
+                             <%- weatherdata[0].forecast[0].skytextday %>
+                             </span>
+                    <span class="font-semibold mt-1 text-sm"><%- weatherdata[0].forecast[0].day %></span>
+                    <span class="text-xs font-semibold text-cyan-900"><%- weatherdata[0].forecast[0].date %></span>
+                    <span class="text-xs font-semibold text-cyan-900"></span>
+                </div>
+                <!-- Forecast for today -->
+                <div class="flex flex-col items-center">
+                    <span class="font-semibold text-lg"><%- weatherdata[0].forecast[1].high %>°<%- weatherdata[0].location.degreetype %></span>
+                    <span class="font-semibold mt-1 text-sm">
+                    <% if(weatherdata[0].forecast[1].skytextday == 'Light Rain') { %>
+                        <svg class="h-20 w-20" version="1.1" height="24" width="24" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.854 16.854" style="enable-background:new 0 0 16.854 16.854;" xml:space="preserve"><g><g>
+                        <path style="fill:#006064;" d="M11.663,1.462c-1.37,0-2.681,0.545-3.652,1.506C7.696,2.885,7.372,2.842,7.048,2.842 c-1.148,0-2.225,0.515-2.946,1.393c-0.099-0.009-0.196-0.013-0.29-0.013C1.709,4.222,0,5.933,0,8.035 c0,1.968,1.475,3.599,3.431,3.792l6.772,0.001c0.008,0.001,0.014,0.004,0.021,0.004h1.017h0.002h0.203l0,0h0.523h0.019 c2.729-0.171,4.866-2.445,4.866-5.178C16.854,3.792,14.526,1.462,11.663,1.462z M11.933,10.678h-0.479 c-0.004,0-0.006-0.001-0.008-0.001h-0.203h-0.002h-1.017c-0.002,0-0.002,0-0.002,0H3.518c-1.35-0.148-2.363-1.278-2.363-2.642 c0-1.466,1.191-2.658,2.657-2.658c0.14,0,0.288,0.014,0.453,0.043l0.368,0.063l0.209-0.309C5.513,4.175,6.816,3.733,7.98,4.169 L8.355,4.31l0.264-0.302c0.77-0.884,1.878-1.391,3.044-1.391c2.226,0,4.037,1.812,4.037,4.037 C15.7,8.772,14.047,10.536,11.933,10.678z"/>
+                        <path style="fill:#006064;" d="M8.448,14.5c0,0.493,0.356,0.892,0.797,0.892s0.797-0.398,0.797-0.892s-0.797-1.288-0.797-1.288 S8.448,14.007,8.448,14.5z"/>
+                        <path style="fill:#006064;" d="M10.529,13.401c0,0.355,0.22,0.644,0.49,0.644s0.49-0.288,0.49-0.644c0-0.356-0.49-0.93-0.49-0.93 S10.529,13.045,10.529,13.401z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                    <% } else if(weatherdata[0].forecast[1].skytextday == 'Rain Showers' || weatherdata[0].forecast[1].skytextday == 'Rain') { %>  
+                        <svg  class="h-20 w-20" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+                            <path d="M9.45455 30.9942C6.14242 28.461 4 24.4278 4 19.8851C4 12.2166 10.1052 6 17.6364 6C23.9334 6 29.2336 10.3462 30.8015 16.2533C32.0353 15.6159 33.431 15.2567 34.9091 15.2567C39.9299 15.2567 44 19.4011 44 24.5135C44 28.3094 41.7562 31.5716 38.5455 33" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 27V31" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 38V42" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    
+                        <% } else if(weatherdata[0].forecast[1].skytextday == 'T-Storms') { %>
+                            <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                <g>
+                              <g>
+                                <path style="fill:#006064" d="m328.7,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z" />
+                                <path style="fill:#006064" d="m455,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.2-21.7-3.7-28.6z" />
+                                <path  style="fill:#006064" d="m376.4,432.9c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z"/>
+                                <path  style="fill:#006064" d="m437.6,121.6c-7.8-62.9-65-110.6-135.4-110.6-40.9,0-78.7,16.5-104.2,44.5-18.3-17-43.6-27.1-70.3-27.1-54.5,0-98.9,40.7-98.9,90.7 0,10.3 2,20.6 5.7,30.3-15.2,20-23.5,43.8-23.5,68.2 0,62.6 52.9,114.1 119.8,118.8l-13.1,26c-2.7,5.4-2.9,11.7-0.5,17.3 2.4,5.6 7.1,9.8 12.9,11.5l37.4,11.2-48,65.5c-6.7,9.1-4.7,21.9 4.4,28.5 3.6,2.7 17.2,9.4 28.5-4.4l65.1-88.8c3.9-5.4 5-12.3 2.9-18.6-2.1-6.3-7.1-11.2-13.5-13.1l-41.8-12.5 11.2-22.3h199.1c69.2,0 125.6-51.7 125.6-115.2 0-41.5-24.5-79.6-63.4-99.9zm-62.2,177.7h-234.5c-49.1,0-89.1-36.7-89.1-81.7 0-19.5 7.7-38.4 21.6-53.2 5.4-5.8 6.5-14 2.7-20.8-4.3-7.7-6.5-15.9-6.5-24.4 0-29.4 26.1-53.3 58.1-53.3 22.3,0 42.9,12 52.5,30.6 3.3,6.5 10.4,10.6 18.2,10.7 7.6,0.1 15-3.9 18.5-10.3 16.4-29.9 49.1-48.4 85.4-48.4 52.2,0 94.2,37.6 95.5,85.5 0.2,7.2 4.9,13.7 12.1,16.6 30.6,12.5 50.4,40.4 50.4,71-0.1,42.8-38.1,77.7-84.9,77.7z"/>
+                              </g>
+                            </g>
+                          </svg>
+                          <% } else if(weatherdata[0].forecast[1].skytextday == 'Mostly Cloudy' || weatherdata[0].forecast[1].skytextday == 'Cloudy' || weatherdata[0].forecast[1].skytextday == 'Clear') { %>
+                            <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                <g>
+                                  <path style="fill:#006064" d="m402.5,259.7c-6.4-32.4-23.5-62-48.6-83.9-5.5-4.8-11.2-9.1-17.2-13 0-1.5-0.1-2.9-0.4-4.4-2.5-12.2-6.5-23.9-11.7-34.9l8.7-5.8c9.4-6.2 11.9-18.9 5.7-28.3-6.2-9.4-18.9-12-28.3-5.7l-8.4,5.6c-17.2-19.9-39.1-34.8-63.8-43.5l2.1-10.3c2.2-11-4.9-21.8-15.9-24.1-11.1-2.3-21.8,4.9-24.1,15.9l-2.1,10.2c-26.1-1.8-52,3.2-75.5,14.7l-5.6-8.6c-6.2-9.4-18.8-12.1-28.2-5.9-9.6,6.2-12.2,18.9-6,28.3l5.8,8.8c-20.2,17.7-34.8,40.1-43.2,64.5l-10-2.1c-11-2.3-21.8,4.8-24.1,15.9-2.3,11 4.8,21.8 15.8,24.1l10.1,2.1c-1.5,21.2 1.4,42.7 9,63.3l-13.3,8.8c-9.4,6.3-11.9,18.9-5.7,28.3 3.9,5.9 10.4,9.1 17,9.1 2.9,0 5.9-0.6 8.7-2-4.4,3.8-8.6,8-12.5,12.4-19.4,22.3-30.1,50.9-29.9,80.5 0.2,66.9 55.4,121.3 122.8,121.3h244.2c32.4,0 63.1-12.7 86.4-35.6 23.5-23.1 36.5-53.7 36.5-86.1 5.68434e-14-58.5-41.7-108.6-98.3-119.6zm-274.9-163.2c24.5-16.3 53.9-22.1 82.7-16.2 29,5.9 53.9,22.9 70.1,47.8 3,4.6 5.6,9.4 7.9,14.3-10.8-2.5-22-3.7-33.2-3.7-36.4,0-71.5,13.2-98.8,37.1-25.1,22-42.2,51.6-48.6,84.2-1.4,0.3-2.9,0.6-4.3,1-2.6-3.1-5-6.4-7.2-9.8-33.5-51.4-19.5-120.8 31.4-154.7zm308.1,339.6c-15.7,15.4-36.2,23.9-57.8,23.9h-244.2c-45,0-81.7-36-81.9-80.4-0.2-40.2 29.6-74.7 69.2-80.3 13.4-1.9 24.1-12.5 26-25.9 7.6-53.4 54.1-93.7 108.1-93.7 53.9,0 100.4,40.2 108.1,93.5 2,13.5 12.8,24.2 26.4,25.9 40,5.2 70.2,39.6 70.2,80 0.1,21.4-8.5,41.6-24.1,57z"/>
+                                </g>
+                              </svg>
+                          <% } else if(weatherdata[0].forecast[1].skytextday == 'Sunny' || weatherdata[0].forecast[0].skytextday == 'Partly Sunny') { %>
+                            <svg class="h-20 w-20" width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>ionicons-v5-q</title><path style="fill:#006064" d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z"/><path style="fill:#006064" d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z"/><path style="fill:#006064" d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z"/><path style="fill:#006064" d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z"/><path style="fill:#006064" d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z"/><path style="fill:#006064" d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z"/><path style="fill:#006064" d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z"/></svg>
+                         <% } %>
+
+
+                         <%- weatherdata[0].forecast[1].skytextday %>
+                        </span>
+                    <span class="font-semibold mt-1 text-sm"><%- weatherdata[0].forecast[1].day %></span>
+                    
+                    <span class="text-xs font-semibold text-cyan-900"><%- weatherdata[0].forecast[1].date %></span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-semibold text-lg"><%- weatherdata[0].forecast[2].high %>°<%- weatherdata[0].location.degreetype %></span>
+                    
+                    <span class="font-semibold mt-1 text-sm">
+                    <% if(weatherdata[0].forecast[2].skytextday == 'Light Rain') { %>
+                        <svg class="h-20 w-20" version="1.1" height="24" width="24" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.854 16.854" style="enable-background:new 0 0 16.854 16.854;" xml:space="preserve"><g><g>
+                        <path style="fill:#006064;" d="M11.663,1.462c-1.37,0-2.681,0.545-3.652,1.506C7.696,2.885,7.372,2.842,7.048,2.842 c-1.148,0-2.225,0.515-2.946,1.393c-0.099-0.009-0.196-0.013-0.29-0.013C1.709,4.222,0,5.933,0,8.035 c0,1.968,1.475,3.599,3.431,3.792l6.772,0.001c0.008,0.001,0.014,0.004,0.021,0.004h1.017h0.002h0.203l0,0h0.523h0.019 c2.729-0.171,4.866-2.445,4.866-5.178C16.854,3.792,14.526,1.462,11.663,1.462z M11.933,10.678h-0.479 c-0.004,0-0.006-0.001-0.008-0.001h-0.203h-0.002h-1.017c-0.002,0-0.002,0-0.002,0H3.518c-1.35-0.148-2.363-1.278-2.363-2.642 c0-1.466,1.191-2.658,2.657-2.658c0.14,0,0.288,0.014,0.453,0.043l0.368,0.063l0.209-0.309C5.513,4.175,6.816,3.733,7.98,4.169 L8.355,4.31l0.264-0.302c0.77-0.884,1.878-1.391,3.044-1.391c2.226,0,4.037,1.812,4.037,4.037 C15.7,8.772,14.047,10.536,11.933,10.678z"/>
+                        <path style="fill:#006064;" d="M8.448,14.5c0,0.493,0.356,0.892,0.797,0.892s0.797-0.398,0.797-0.892s-0.797-1.288-0.797-1.288 S8.448,14.007,8.448,14.5z"/>
+                        <path style="fill:#006064;" d="M10.529,13.401c0,0.355,0.22,0.644,0.49,0.644s0.49-0.288,0.49-0.644c0-0.356-0.49-0.93-0.49-0.93 S10.529,13.045,10.529,13.401z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                    <% } else if(weatherdata[0].forecast[2].skytextday == 'Rain Showers' || weatherdata[0].forecast[2].skytextday == 'Rain') { %>  
+                        <svg  class="h-20 w-20" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+                            <path d="M9.45455 30.9942C6.14242 28.461 4 24.4278 4 19.8851C4 12.2166 10.1052 6 17.6364 6C23.9334 6 29.2336 10.3462 30.8015 16.2533C32.0353 15.6159 33.431 15.2567 34.9091 15.2567C39.9299 15.2567 44 19.4011 44 24.5135C44 28.3094 41.7562 31.5716 38.5455 33" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 27V31" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 38V42" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        <% } else if(weatherdata[0].forecast[2].skytextday == 'T-Storms') { %>
+                            <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                <g>
+                              <g>
+                                <path style="fill:#006064" d="m328.7,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z" />
+                                <path style="fill:#006064" d="m455,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.2-21.7-3.7-28.6z" />
+                                <path  style="fill:#006064" d="m376.4,432.9c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z"/>
+                                <path  style="fill:#006064" d="m437.6,121.6c-7.8-62.9-65-110.6-135.4-110.6-40.9,0-78.7,16.5-104.2,44.5-18.3-17-43.6-27.1-70.3-27.1-54.5,0-98.9,40.7-98.9,90.7 0,10.3 2,20.6 5.7,30.3-15.2,20-23.5,43.8-23.5,68.2 0,62.6 52.9,114.1 119.8,118.8l-13.1,26c-2.7,5.4-2.9,11.7-0.5,17.3 2.4,5.6 7.1,9.8 12.9,11.5l37.4,11.2-48,65.5c-6.7,9.1-4.7,21.9 4.4,28.5 3.6,2.7 17.2,9.4 28.5-4.4l65.1-88.8c3.9-5.4 5-12.3 2.9-18.6-2.1-6.3-7.1-11.2-13.5-13.1l-41.8-12.5 11.2-22.3h199.1c69.2,0 125.6-51.7 125.6-115.2 0-41.5-24.5-79.6-63.4-99.9zm-62.2,177.7h-234.5c-49.1,0-89.1-36.7-89.1-81.7 0-19.5 7.7-38.4 21.6-53.2 5.4-5.8 6.5-14 2.7-20.8-4.3-7.7-6.5-15.9-6.5-24.4 0-29.4 26.1-53.3 58.1-53.3 22.3,0 42.9,12 52.5,30.6 3.3,6.5 10.4,10.6 18.2,10.7 7.6,0.1 15-3.9 18.5-10.3 16.4-29.9 49.1-48.4 85.4-48.4 52.2,0 94.2,37.6 95.5,85.5 0.2,7.2 4.9,13.7 12.1,16.6 30.6,12.5 50.4,40.4 50.4,71-0.1,42.8-38.1,77.7-84.9,77.7z"/>
+                              </g>
+                            </g>
+                          </svg> <% } else if(weatherdata[0].forecast[2].skytextday == 'Mostly Cloudy' || weatherdata[0].forecast[2].skytextday == 'Cloudy' || weatherdata[0].forecast[2].skytextday == 'Clear') { %>
+                            <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                <g>
+                                  <path style="fill:#006064" d="m402.5,259.7c-6.4-32.4-23.5-62-48.6-83.9-5.5-4.8-11.2-9.1-17.2-13 0-1.5-0.1-2.9-0.4-4.4-2.5-12.2-6.5-23.9-11.7-34.9l8.7-5.8c9.4-6.2 11.9-18.9 5.7-28.3-6.2-9.4-18.9-12-28.3-5.7l-8.4,5.6c-17.2-19.9-39.1-34.8-63.8-43.5l2.1-10.3c2.2-11-4.9-21.8-15.9-24.1-11.1-2.3-21.8,4.9-24.1,15.9l-2.1,10.2c-26.1-1.8-52,3.2-75.5,14.7l-5.6-8.6c-6.2-9.4-18.8-12.1-28.2-5.9-9.6,6.2-12.2,18.9-6,28.3l5.8,8.8c-20.2,17.7-34.8,40.1-43.2,64.5l-10-2.1c-11-2.3-21.8,4.8-24.1,15.9-2.3,11 4.8,21.8 15.8,24.1l10.1,2.1c-1.5,21.2 1.4,42.7 9,63.3l-13.3,8.8c-9.4,6.3-11.9,18.9-5.7,28.3 3.9,5.9 10.4,9.1 17,9.1 2.9,0 5.9-0.6 8.7-2-4.4,3.8-8.6,8-12.5,12.4-19.4,22.3-30.1,50.9-29.9,80.5 0.2,66.9 55.4,121.3 122.8,121.3h244.2c32.4,0 63.1-12.7 86.4-35.6 23.5-23.1 36.5-53.7 36.5-86.1 5.68434e-14-58.5-41.7-108.6-98.3-119.6zm-274.9-163.2c24.5-16.3 53.9-22.1 82.7-16.2 29,5.9 53.9,22.9 70.1,47.8 3,4.6 5.6,9.4 7.9,14.3-10.8-2.5-22-3.7-33.2-3.7-36.4,0-71.5,13.2-98.8,37.1-25.1,22-42.2,51.6-48.6,84.2-1.4,0.3-2.9,0.6-4.3,1-2.6-3.1-5-6.4-7.2-9.8-33.5-51.4-19.5-120.8 31.4-154.7zm308.1,339.6c-15.7,15.4-36.2,23.9-57.8,23.9h-244.2c-45,0-81.7-36-81.9-80.4-0.2-40.2 29.6-74.7 69.2-80.3 13.4-1.9 24.1-12.5 26-25.9 7.6-53.4 54.1-93.7 108.1-93.7 53.9,0 100.4,40.2 108.1,93.5 2,13.5 12.8,24.2 26.4,25.9 40,5.2 70.2,39.6 70.2,80 0.1,21.4-8.5,41.6-24.1,57z"/>
+                                </g>
+                              </svg>
+
+                          <% } else if(weatherdata[0].forecast[2].skytextday == 'Sunny' || weatherdata[0].forecast[0].skytextday == 'Partly Sunny') { %>
+                            <svg class="h-20 w-20" width="512px" height="512px" aria-hidden="true"></i> viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>ionicons-v5-q</title><path style="fill:#006064" d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z"/><path style="fill:#006064" d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z"/><path style="fill:#006064" d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z"/><path style="fill:#006064" d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z"/><path style="fill:#006064" d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z"/><path style="fill:#006064" d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z"/><path style="fill:#006064" d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z"/></svg>
+                         <% } %>
+                         <%- weatherdata[0].forecast[2].skytextday %></span>
+                         <span class="font-semibold mt-1 text-sm"><%- weatherdata[0].forecast[2].day %></span>
+                    <span class="text-xs font-semibold text-cyan-900"><%- weatherdata[0].forecast[2].date %></span>
+                </div>
+                <!-- Forecast for friday -->
+                <div class="flex flex-col items-center">
+                    <span class="font-semibold text-lg"><%- weatherdata[0].forecast[3].high %>°<%- weatherdata[0].location.degreetype %></span>
+                   
+                    <span class="font-semibold mt-1 text-sm">
+                        <% if(weatherdata[0].forecast[3].skytextday == 'Light Rain') { %>
+                            <svg class="h-20 w-20" version="1.1" height="24" width="24" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.854 16.854" style="enable-background:new 0 0 16.854 16.854;" xml:space="preserve"><g><g>
+                            <path style="fill:#006064;" d="M11.663,1.462c-1.37,0-2.681,0.545-3.652,1.506C7.696,2.885,7.372,2.842,7.048,2.842 c-1.148,0-2.225,0.515-2.946,1.393c-0.099-0.009-0.196-0.013-0.29-0.013C1.709,4.222,0,5.933,0,8.035 c0,1.968,1.475,3.599,3.431,3.792l6.772,0.001c0.008,0.001,0.014,0.004,0.021,0.004h1.017h0.002h0.203l0,0h0.523h0.019 c2.729-0.171,4.866-2.445,4.866-5.178C16.854,3.792,14.526,1.462,11.663,1.462z M11.933,10.678h-0.479 c-0.004,0-0.006-0.001-0.008-0.001h-0.203h-0.002h-1.017c-0.002,0-0.002,0-0.002,0H3.518c-1.35-0.148-2.363-1.278-2.363-2.642 c0-1.466,1.191-2.658,2.657-2.658c0.14,0,0.288,0.014,0.453,0.043l0.368,0.063l0.209-0.309C5.513,4.175,6.816,3.733,7.98,4.169 L8.355,4.31l0.264-0.302c0.77-0.884,1.878-1.391,3.044-1.391c2.226,0,4.037,1.812,4.037,4.037 C15.7,8.772,14.047,10.536,11.933,10.678z"/>
+                            <path style="fill:#006064;" d="M8.448,14.5c0,0.493,0.356,0.892,0.797,0.892s0.797-0.398,0.797-0.892s-0.797-1.288-0.797-1.288 S8.448,14.007,8.448,14.5z"/>
+                            <path style="fill:#006064;" d="M10.529,13.401c0,0.355,0.22,0.644,0.49,0.644s0.49-0.288,0.49-0.644c0-0.356-0.49-0.93-0.49-0.93 S10.529,13.045,10.529,13.401z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <% } else if(weatherdata[0].forecast[3].skytextday == 'Rain Showers' || weatherdata[0].forecast[3].skytextday == 'Rain') { %>  
+                            <svg  class="h-20 w-20" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+                                <path d="M9.45455 30.9942C6.14242 28.461 4 24.4278 4 19.8851C4 12.2166 10.1052 6 17.6364 6C23.9334 6 29.2336 10.3462 30.8015 16.2533C32.0353 15.6159 33.431 15.2567 34.9091 15.2567C39.9299 15.2567 44 19.4011 44 24.5135C44 28.3094 41.7562 31.5716 38.5455 33" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 27V31" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 38V42" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+      
+                            <% } else if(weatherdata[0].forecast[3].skytextday == 'T-Storms') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                  <g>
+                                    <path style="fill:#006064" d="m328.7,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z" />
+                                    <path style="fill:#006064" d="m455,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.2-21.7-3.7-28.6z" />
+                                    <path  style="fill:#006064" d="m376.4,432.9c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z"/>
+                                    <path  style="fill:#006064" d="m437.6,121.6c-7.8-62.9-65-110.6-135.4-110.6-40.9,0-78.7,16.5-104.2,44.5-18.3-17-43.6-27.1-70.3-27.1-54.5,0-98.9,40.7-98.9,90.7 0,10.3 2,20.6 5.7,30.3-15.2,20-23.5,43.8-23.5,68.2 0,62.6 52.9,114.1 119.8,118.8l-13.1,26c-2.7,5.4-2.9,11.7-0.5,17.3 2.4,5.6 7.1,9.8 12.9,11.5l37.4,11.2-48,65.5c-6.7,9.1-4.7,21.9 4.4,28.5 3.6,2.7 17.2,9.4 28.5-4.4l65.1-88.8c3.9-5.4 5-12.3 2.9-18.6-2.1-6.3-7.1-11.2-13.5-13.1l-41.8-12.5 11.2-22.3h199.1c69.2,0 125.6-51.7 125.6-115.2 0-41.5-24.5-79.6-63.4-99.9zm-62.2,177.7h-234.5c-49.1,0-89.1-36.7-89.1-81.7 0-19.5 7.7-38.4 21.6-53.2 5.4-5.8 6.5-14 2.7-20.8-4.3-7.7-6.5-15.9-6.5-24.4 0-29.4 26.1-53.3 58.1-53.3 22.3,0 42.9,12 52.5,30.6 3.3,6.5 10.4,10.6 18.2,10.7 7.6,0.1 15-3.9 18.5-10.3 16.4-29.9 49.1-48.4 85.4-48.4 52.2,0 94.2,37.6 95.5,85.5 0.2,7.2 4.9,13.7 12.1,16.6 30.6,12.5 50.4,40.4 50.4,71-0.1,42.8-38.1,77.7-84.9,77.7z"/>
+                                  </g>
+                                </g>
+                              </svg>
+                              <% } else if(weatherdata[0].forecast[3].skytextday == 'Mostly Cloudy' || weatherdata[0].forecast[3].skytextday == 'Cloudy' || weatherdata[0].forecast[3].skytextday == 'Clear') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                      <path style="fill:#006064" d="m402.5,259.7c-6.4-32.4-23.5-62-48.6-83.9-5.5-4.8-11.2-9.1-17.2-13 0-1.5-0.1-2.9-0.4-4.4-2.5-12.2-6.5-23.9-11.7-34.9l8.7-5.8c9.4-6.2 11.9-18.9 5.7-28.3-6.2-9.4-18.9-12-28.3-5.7l-8.4,5.6c-17.2-19.9-39.1-34.8-63.8-43.5l2.1-10.3c2.2-11-4.9-21.8-15.9-24.1-11.1-2.3-21.8,4.9-24.1,15.9l-2.1,10.2c-26.1-1.8-52,3.2-75.5,14.7l-5.6-8.6c-6.2-9.4-18.8-12.1-28.2-5.9-9.6,6.2-12.2,18.9-6,28.3l5.8,8.8c-20.2,17.7-34.8,40.1-43.2,64.5l-10-2.1c-11-2.3-21.8,4.8-24.1,15.9-2.3,11 4.8,21.8 15.8,24.1l10.1,2.1c-1.5,21.2 1.4,42.7 9,63.3l-13.3,8.8c-9.4,6.3-11.9,18.9-5.7,28.3 3.9,5.9 10.4,9.1 17,9.1 2.9,0 5.9-0.6 8.7-2-4.4,3.8-8.6,8-12.5,12.4-19.4,22.3-30.1,50.9-29.9,80.5 0.2,66.9 55.4,121.3 122.8,121.3h244.2c32.4,0 63.1-12.7 86.4-35.6 23.5-23.1 36.5-53.7 36.5-86.1 5.68434e-14-58.5-41.7-108.6-98.3-119.6zm-274.9-163.2c24.5-16.3 53.9-22.1 82.7-16.2 29,5.9 53.9,22.9 70.1,47.8 3,4.6 5.6,9.4 7.9,14.3-10.8-2.5-22-3.7-33.2-3.7-36.4,0-71.5,13.2-98.8,37.1-25.1,22-42.2,51.6-48.6,84.2-1.4,0.3-2.9,0.6-4.3,1-2.6-3.1-5-6.4-7.2-9.8-33.5-51.4-19.5-120.8 31.4-154.7zm308.1,339.6c-15.7,15.4-36.2,23.9-57.8,23.9h-244.2c-45,0-81.7-36-81.9-80.4-0.2-40.2 29.6-74.7 69.2-80.3 13.4-1.9 24.1-12.5 26-25.9 7.6-53.4 54.1-93.7 108.1-93.7 53.9,0 100.4,40.2 108.1,93.5 2,13.5 12.8,24.2 26.4,25.9 40,5.2 70.2,39.6 70.2,80 0.1,21.4-8.5,41.6-24.1,57z"/>
+                                    </g>
+                                  </svg>
+                              <% } else if(weatherdata[0].forecast[3].skytextday == 'Sunny' || weatherdata[0].forecast[0].skytextday == 'Partly Sunny') { %>
+                                <svg class="h-20 w-20" width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>ionicons-v5-q</title><path style="fill:#006064" d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z"/><path style="fill:#006064" d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z"/><path style="fill:#006064" d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z"/><path style="fill:#006064" d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z"/><path style="fill:#006064" d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z"/><path style="fill:#006064" d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z"/><path style="fill:#006064" d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z"/></svg>
+                             <% } %>
+                             <%- weatherdata[0].forecast[3].skytextday %>
+                    
+                    </span>
+                    <span class="font-semibold mt-1 text-sm"><%- weatherdata[0].forecast[3].day %></span>
+                    <span class="text-xs font-semibold text-cyan-900"><%- weatherdata[0].forecast[3].date %></span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-semibold text-lg"><%- weatherdata[0].forecast[4].high %>°<%- weatherdata[0].location.degreetype %></span>
+                   
+                    
+                    
+                    
+                    
+                    <span class="font-semibold mt-1 text-sm">
+                        <% if(weatherdata[0].forecast[4].skytextday == 'Light Rain') { %>
+                            <svg class="h-20 w-20 fill-current text-cyan-900 mt-3" version="1.1" height="24" width="24" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.854 16.854" style="enable-background:new 0 0 16.854 16.854;" xml:space="preserve"><g><g>
+                            <path style="fill:#006064;" d="M11.663,1.462c-1.37,0-2.681,0.545-3.652,1.506C7.696,2.885,7.372,2.842,7.048,2.842 c-1.148,0-2.225,0.515-2.946,1.393c-0.099-0.009-0.196-0.013-0.29-0.013C1.709,4.222,0,5.933,0,8.035 c0,1.968,1.475,3.599,3.431,3.792l6.772,0.001c0.008,0.001,0.014,0.004,0.021,0.004h1.017h0.002h0.203l0,0h0.523h0.019 c2.729-0.171,4.866-2.445,4.866-5.178C16.854,3.792,14.526,1.462,11.663,1.462z M11.933,10.678h-0.479 c-0.004,0-0.006-0.001-0.008-0.001h-0.203h-0.002h-1.017c-0.002,0-0.002,0-0.002,0H3.518c-1.35-0.148-2.363-1.278-2.363-2.642 c0-1.466,1.191-2.658,2.657-2.658c0.14,0,0.288,0.014,0.453,0.043l0.368,0.063l0.209-0.309C5.513,4.175,6.816,3.733,7.98,4.169 L8.355,4.31l0.264-0.302c0.77-0.884,1.878-1.391,3.044-1.391c2.226,0,4.037,1.812,4.037,4.037 C15.7,8.772,14.047,10.536,11.933,10.678z"/>
+                            <path style="fill:#006064;" d="M8.448,14.5c0,0.493,0.356,0.892,0.797,0.892s0.797-0.398,0.797-0.892s-0.797-1.288-0.797-1.288 S8.448,14.007,8.448,14.5z"/>
+                            <path style="fill:#006064;" d="M10.529,13.401c0,0.355,0.22,0.644,0.49,0.644s0.49-0.288,0.49-0.644c0-0.356-0.49-0.93-0.49-0.93 S10.529,13.045,10.529,13.401z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <% } else if(weatherdata[0].forecast[4].skytextday == 'Rain Showers' || weatherdata[0].forecast[4].skytextday == 'Rain') { %>  
+                            <svg  class="h-20 w-20" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+                                <path d="M9.45455 30.9942C6.14242 28.461 4 24.4278 4 19.8851C4 12.2166 10.1052 6 17.6364 6C23.9334 6 29.2336 10.3462 30.8015 16.2533C32.0353 15.6159 33.431 15.2567 34.9091 15.2567C39.9299 15.2567 44 19.4011 44 24.5135C44 28.3094 41.7562 31.5716 38.5455 33" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 27V31" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 23V27" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 38V42" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 34V38" stroke="#006064" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                            <% } else if(weatherdata[0].forecast[4].skytextday == 'T-Storms') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                  <g>
+                                    <path style="fill:#006064" d="m328.7,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z" />
+                                    <path style="fill:#006064" d="m455,345.4c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.2-21.7-3.7-28.6z" />
+                                    <path  style="fill:#006064" d="m376.4,432.9c-8.9-6.9-21.8-5.2-28.6,3.7l-24.3,31.5c-6.9,8.9-5.6,22.3 3.7,28.6 13.6,9.2 24.6,1.5 28.6-3.7l24.3-31.5c6.9-8.9 5.3-21.7-3.7-28.6z"/>
+                                    <path  style="fill:#006064" d="m437.6,121.6c-7.8-62.9-65-110.6-135.4-110.6-40.9,0-78.7,16.5-104.2,44.5-18.3-17-43.6-27.1-70.3-27.1-54.5,0-98.9,40.7-98.9,90.7 0,10.3 2,20.6 5.7,30.3-15.2,20-23.5,43.8-23.5,68.2 0,62.6 52.9,114.1 119.8,118.8l-13.1,26c-2.7,5.4-2.9,11.7-0.5,17.3 2.4,5.6 7.1,9.8 12.9,11.5l37.4,11.2-48,65.5c-6.7,9.1-4.7,21.9 4.4,28.5 3.6,2.7 17.2,9.4 28.5-4.4l65.1-88.8c3.9-5.4 5-12.3 2.9-18.6-2.1-6.3-7.1-11.2-13.5-13.1l-41.8-12.5 11.2-22.3h199.1c69.2,0 125.6-51.7 125.6-115.2 0-41.5-24.5-79.6-63.4-99.9zm-62.2,177.7h-234.5c-49.1,0-89.1-36.7-89.1-81.7 0-19.5 7.7-38.4 21.6-53.2 5.4-5.8 6.5-14 2.7-20.8-4.3-7.7-6.5-15.9-6.5-24.4 0-29.4 26.1-53.3 58.1-53.3 22.3,0 42.9,12 52.5,30.6 3.3,6.5 10.4,10.6 18.2,10.7 7.6,0.1 15-3.9 18.5-10.3 16.4-29.9 49.1-48.4 85.4-48.4 52.2,0 94.2,37.6 95.5,85.5 0.2,7.2 4.9,13.7 12.1,16.6 30.6,12.5 50.4,40.4 50.4,71-0.1,42.8-38.1,77.7-84.9,77.7z"/>
+                                  </g>
+                                </g>
+                              </svg>
+                              <% } else if(weatherdata[0].forecast[4].skytextday == 'Mostly Cloudy' || weatherdata[0].forecast[4].skytextday == 'Cloudy' || weatherdata[0].forecast[4].skytextday == 'Clear') { %>
+                                <svg class="h-20 w-20" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                      <path style="fill:#006064" d="m402.5,259.7c-6.4-32.4-23.5-62-48.6-83.9-5.5-4.8-11.2-9.1-17.2-13 0-1.5-0.1-2.9-0.4-4.4-2.5-12.2-6.5-23.9-11.7-34.9l8.7-5.8c9.4-6.2 11.9-18.9 5.7-28.3-6.2-9.4-18.9-12-28.3-5.7l-8.4,5.6c-17.2-19.9-39.1-34.8-63.8-43.5l2.1-10.3c2.2-11-4.9-21.8-15.9-24.1-11.1-2.3-21.8,4.9-24.1,15.9l-2.1,10.2c-26.1-1.8-52,3.2-75.5,14.7l-5.6-8.6c-6.2-9.4-18.8-12.1-28.2-5.9-9.6,6.2-12.2,18.9-6,28.3l5.8,8.8c-20.2,17.7-34.8,40.1-43.2,64.5l-10-2.1c-11-2.3-21.8,4.8-24.1,15.9-2.3,11 4.8,21.8 15.8,24.1l10.1,2.1c-1.5,21.2 1.4,42.7 9,63.3l-13.3,8.8c-9.4,6.3-11.9,18.9-5.7,28.3 3.9,5.9 10.4,9.1 17,9.1 2.9,0 5.9-0.6 8.7-2-4.4,3.8-8.6,8-12.5,12.4-19.4,22.3-30.1,50.9-29.9,80.5 0.2,66.9 55.4,121.3 122.8,121.3h244.2c32.4,0 63.1-12.7 86.4-35.6 23.5-23.1 36.5-53.7 36.5-86.1 5.68434e-14-58.5-41.7-108.6-98.3-119.6zm-274.9-163.2c24.5-16.3 53.9-22.1 82.7-16.2 29,5.9 53.9,22.9 70.1,47.8 3,4.6 5.6,9.4 7.9,14.3-10.8-2.5-22-3.7-33.2-3.7-36.4,0-71.5,13.2-98.8,37.1-25.1,22-42.2,51.6-48.6,84.2-1.4,0.3-2.9,0.6-4.3,1-2.6-3.1-5-6.4-7.2-9.8-33.5-51.4-19.5-120.8 31.4-154.7zm308.1,339.6c-15.7,15.4-36.2,23.9-57.8,23.9h-244.2c-45,0-81.7-36-81.9-80.4-0.2-40.2 29.6-74.7 69.2-80.3 13.4-1.9 24.1-12.5 26-25.9 7.6-53.4 54.1-93.7 108.1-93.7 53.9,0 100.4,40.2 108.1,93.5 2,13.5 12.8,24.2 26.4,25.9 40,5.2 70.2,39.6 70.2,80 0.1,21.4-8.5,41.6-24.1,57z"/>
+                                    </g>
+                                  </svg>
+                              <% } else if(weatherdata[0].forecast[4].skytextday == 'Sunny' || weatherdata[0].forecast[0].skytextday == 'Partly Sunny'){ %>
+                                <svg class="h-20 w-20" width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><title>ionicons-v5-q</title><path style="fill:#006064" d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z"/><path style="fill:#006064" d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z"/><path style="fill:#006064" d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z"/><path style="fill:#006064" d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z"/><path style="fill:#006064" d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z"/><path style="fill:#006064" d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z"/><path style="fill:#006064" d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z"/><path style="fill:#006064" d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z"/></svg>
+                             <% } %>
+                             <%- weatherdata[0].forecast[4].skytextday %></span>
+                             
+                             <span class="font-semibold mt-1 text-sm"><%- weatherdata[0].forecast[4].day %></span>
+                    <span class="text-xs font-semibold text-cyan-900"><%- weatherdata[0].forecast[4].date %></span>
+                </div>
+            </div>
+        </div>
+        
+           
+           
+            
+            
+            
+        </div>
+        <!-- Component End  -->
+    
+    </div>
+    </div>
+</body>
+</html>
+
+<style>
+.container1 {
+    width: 100%;;
+    background-color: #D3D9E9;
+    align-content: center;
+    font-size: 40px;
+    
+}
+.tr {
+    align-items: flex;
+    padding-block-end: 200px;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+}
+ 
+</style>
